@@ -413,20 +413,4 @@ public class PruebasUnitarias {
 		Assert.assertNotNull(nuevo);
 	}
 
-	@Test
-	public void generarInformeFiscalTest() {
-		Recibo recibo = new Recibo(false);
-		int cantidad = 3;
-		ProductosInventario producto = new ProductosInventario("7702004002419", "AGUILA ZERO BOTELLA RETORNABLE",
-				new Empresa("Bavaria"), 30, 19, 48800, 20, "Licor", 2500);
-		inventario.agregarProducto(producto);
-
-		recibo.agregarProductos(producto, cantidad);
-
-		RegistroDeVentas registro = new RegistroDeVentas(0, 0);
-		registro.adjuntarUnRecibo(recibo, inventario);
-
-		InformeFiscal informeFiscal = registro.generarInformeFiscal();
-		Assert.assertNotNull(informeFiscal);
-	}
 }
