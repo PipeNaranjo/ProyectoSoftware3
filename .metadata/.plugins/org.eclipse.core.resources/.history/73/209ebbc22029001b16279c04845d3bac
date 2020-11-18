@@ -1,0 +1,11 @@
+package software.cafeteria.controladores;
+
+public class AgregarIvaController {
+
+	private ManejadorEscenarios manejador;
+	private Stage stage;
+
+	public AgregarIvaController() {
+	}
+
+}

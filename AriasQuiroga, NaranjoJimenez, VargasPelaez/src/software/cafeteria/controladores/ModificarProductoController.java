@@ -53,11 +53,11 @@ public class ModificarProductoController {
 	private Button btn_modificar;
 
 	@FXML
-	public void initialize(){
+	public void initialize() {
 		btn_cancelar.setGraphic(new ImageView("file:src/software/cafeteria/images/cancelar.png"));
 		btn_modificar.setGraphic(new ImageView("file:src/software/cafeteria/images/modificarProducto.png"));
 	}
-	
+
 	@FXML
 	void verificarTipo() {
 
@@ -79,7 +79,6 @@ public class ModificarProductoController {
 	@FXML
 	void modificarProducto() {
 
-		// long tiempoInicio = System.currentTimeMillis();
 		try {
 			String codigo_Barras = codigoBarras.getText();
 			String nombre_Producto = nombreProducto.getText();
@@ -93,10 +92,7 @@ public class ModificarProductoController {
 			ProductoObservable productoAnterior = manejador.listarProductos().get(index);
 			manejador.modificarProducto(codigo_Barras, nombre_Producto, costo_Producto, presentacion_Producto,
 					precio_Producto, iva_, tipo_Producto, cantidad_, productoAnterior, empresa);
-			// long tiempoFin = System.currentTimeMillis();
-			// System.out.println("Tiempo de Ejecucion Modificar es: " +
-			// (tiempoFin
-			// - tiempoInicio));
+
 			Alert alert = new Alert(AlertType.CONFIRMATION, "Modificación exitosa", ButtonType.OK);
 			alert.showAndWait();
 			stage.close();
@@ -117,6 +113,18 @@ public class ModificarProductoController {
 				manejador.ventanaAgregarEmpresa();
 				empresaDistri.setItems(manejador.listarEmpresas());
 
+			}
+		}
+	}
+
+	@FXML
+	public void verificarIva() {
+		String iva_ = iva.getSelectionModel().getSelectedItem();
+		if (iva_ != null) {
+			if (iva_.equals("Otro Iva")) {
+				manejador.abrirAgregarIva();
+
+				iva.setItems(manejador.listarIva());
 			}
 		}
 	}
@@ -144,6 +152,7 @@ public class ModificarProductoController {
 		this.index = index;
 		tipoProducto.setItems(manejador.listarTipos());
 		empresaDistri.setItems(manejador.listarEmpresas());
+		iva.setItems(manejador.listarIva());
 		actualiarCampos();
 	}
 

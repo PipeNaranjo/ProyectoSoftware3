@@ -27,18 +27,15 @@ public class Persistencia {
 	 *            Es la ruta del archivo
 	 * @param miTexto
 	 *            Lineas a escribir
-	 * @param adicionar
-	 *            Puede ser true o false
 	 * @throws IOException
 	 */
-	public static void escribirArchivo(String rutaArchivo, ArrayList<String> miTexto, boolean adicionar)
-			throws IOException {
-		
-		OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(rutaArchivo),"utf-8");
-		
-//		File miArchivo = new File(rutaArchivo);
-//
-//		FileWriter miFileWriter = new FileWriter(miArchivo, adicionar);
+	public static void escribirArchivo(String rutaArchivo, ArrayList<String> miTexto) throws IOException {
+
+		OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(rutaArchivo), "utf-8");
+
+		// File miArchivo = new File(rutaArchivo);
+		//
+		// FileWriter miFileWriter = new FileWriter(miArchivo, adicionar);
 		BufferedWriter miBufferWriter = new BufferedWriter(osw);
 
 		for (String miLinea : miTexto) {

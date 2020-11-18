@@ -80,6 +80,9 @@ public class ReciboController {
 	private Button btn_regresar;
 
 	@FXML
+	private TextField cant_bolsas;
+
+	@FXML
 	public void initialize() {
 
 		nombre1.setCellValueFactory(nombre -> nombre.getValue().getNombre());
@@ -410,13 +413,25 @@ public class ReciboController {
 			if (tarjeta.isSelected()) {
 				seleccion = true;
 			}
+			int cantidad_bolsas = 0;
+			if (!cant_bolsas.getText().equals("")) {
+				try {
+					cantidad_bolsas = Integer.parseInt(cant_bolsas.getText());
+				} catch (NumberFormatException e) {
+					Alert alert = new Alert(AlertType.ERROR, "Número de bolsas inválido", ButtonType.OK);
+					alert.show();
+				}
+			}
 			Recibo recibo = new Recibo(seleccion);
 			for (int i = 0; i < carrito.getItems().size(); i++) {
 				recibo.agregarProductos(carrito.getItems().get(i).getProductoInventario(),
 						Integer.parseInt(carrito.getItems().get(i).getCantidad().getValue()));
 			}
+			recibo.setValorBolsas(cantidad_bolsas * 50);
 			if (seleccion) {
 				manejador.adjuntarRecibo(recibo);
+				manejador.abrirCrearFactura();
+				stage.close();
 			} else {
 				manejador.ingresarEfectivo(recibo);
 
@@ -451,6 +466,8 @@ public class ReciboController {
 		carrito.getItems().removeAll(carrito.getItems());
 		carrito.getItems().addAll(productos);
 		valorTotal.setText("0");
+		manejador.setReciboTemp(null);
+		cant_bolsas.setText("");
 
 	}
 
@@ -472,6 +489,7 @@ public class ReciboController {
 				carrito.getItems().add(productoO);
 
 			}
+			cant_bolsas.setText(recibo.getValorBolsas() / 50 + "");
 			valorTotal.setText(recibo.getPrecioTotal() + "");
 		}
 

@@ -1,0 +1,48 @@
+package software.cafeteria.controladores;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+public class AgregarIvaController {
+
+	private ManejadorEscenarios manejador;
+	private Stage stage;
+
+	@FXML
+	private Button btn_agregar;
+
+	@FXML
+	private Button btn_cancelar;
+
+	@FXML
+	private TextField iva;
+
+	@FXML
+	void agregarIva() {
+
+	}
+
+	@FXML
+	void cancelar() {
+
+	}
+
+	public ManejadorEscenarios getManejador() {
+		return manejador;
+	}
+
+	public void setManejador(ManejadorEscenarios manejador) {
+		this.manejador = manejador;
+	}
+
+	public Stage getStage() {
+		return stage;
+	}
+
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
+
+}

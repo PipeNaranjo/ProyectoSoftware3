@@ -1,0 +1,27 @@
+package software.cafeteria.pruebas;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import software.cafeteria.entidades.Empresa;
+import software.cafeteria.entidades.ProductosInventario;
+import software.cafeteria.logica.Inventario;
+
+public class PruebasUnitarias {
+
+	@Test
+	public void test() {
+
+	}
+
+	public void agregarProductoTest() {
+
+		ProductosInventario producto = new ProductosInventario("7702004002419", "AGUILA ZERO BOTELLA RETORNABLE",
+				new Empresa("BAVARIA"), 30, 19, 48800, 20, "Licor", 2500);
+
+		Inventario inventario = new Inventario();
+
+	}
+
+}

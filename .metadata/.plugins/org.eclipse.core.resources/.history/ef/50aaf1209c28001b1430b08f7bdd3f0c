@@ -1,0 +1,52 @@
+package software.cafeteria;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import software.cafeteria.controladores.ManejadorEscenarios;
+import software.cafeteria.entidades.InformeFiscal;
+
+public class Prueba {
+
+	public static void main(String[] args) {
+		InformeFiscal informe = ManejadorEscenarios.informe;
+		ArrayList<String> renglones = new ArrayList<String>();
+
+		renglones.add(
+				"┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐");
+		renglones.add(
+				"│                                          INFORME FISCAL DE VENTAS DIARIAS                                          │");
+		renglones.add(
+				"│                                  CAFETERIA LA CUEVA DEL LOCO    ARMENIA-QUINDIO                                    │");
+		renglones.add(
+				"│                                            ARIGO COMERCIALIZADORA S.A.S.                                           │");
+		GregorianCalendar fecha = informe.getFecha();
+		String prefijo = "│         Fecha:              " + fecha.get(Calendar.YEAR) + "-" + fecha.get(Calendar.MONTH)
+				+ "-" + fecha.get(Calendar.DAY_OF_MONTH);
+		int tamano = renglones.get(0).length();
+		String sufijo = "Consec. Z No:       " + informe.getNumeroInforme() + "      │";
+		renglones.add(prefijo + calcularEspacios(sufijo, tamano) + sufijo);
+
+		prefijo = "│         Número caja:        " + "    1    ";
+
+		prefijo = "│         Registro Inicial:   " + informe.numeroPrimerRecibo();
+		sufijo = "Registro Final:     " + informe.numeroUltimoRecibo() + "      │";
+
+		renglones.add(
+				"│                                                                                                                   │");
+		renglones.add(
+				"└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘");
+
+	}
+
+	public String calcularEspacios(String renglon, int limite) {
+		String espacios = "";
+
+		for (int i = 0; i < limite - renglon.length(); i++) {
+			espacios += " ";
+		}
+
+		return espacios;
+	}
+}

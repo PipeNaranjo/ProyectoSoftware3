@@ -72,14 +72,14 @@
                               <DropShadow color="#544f4f" />
                            </effect>
                         </TableView>
-                        <Button fx:id="btn_factura" layoutX="53.0" layoutY="348.0" mnemonicParsing="false" onAction="#generarFactura" text="Confirmar Compra">
+                        <Button fx:id="btn_factura" layoutX="53.0" layoutY="387.0" mnemonicParsing="false" onAction="#generarFactura" text="Confirmar Compra">
                            <effect>
                               <DropShadow color="#544f4f" />
                            </effect>
                            <font>
                               <Font size="14.0" />
                            </font></Button>
-                        <Button fx:id="btn_carrito" layoutX="235.0" layoutY="348.0" mnemonicParsing="false" onAction="#vaciarCarrito" text="Vaciar Carrito">
+                        <Button fx:id="btn_carrito" layoutX="231.0" layoutY="387.0" mnemonicParsing="false" onAction="#vaciarCarrito" text="Vaciar Carrito">
                            <effect>
                               <DropShadow color="#544f4f" />
                            </effect>
@@ -98,6 +98,12 @@
                            <effect>
                               <DropShadow color="#544f4f" />
                            </effect></RadioButton>
+                        <Label layoutX="107.0" layoutY="352.0" text="Cantidad de bolsas" />
+                        <TextField fx:id="cant_bolsas" alignment="CENTER_RIGHT" layoutX="223.0" layoutY="348.0" promptText="0">
+                           <effect>
+                              <DropShadow color="#544f4f" />
+                           </effect>
+                        </TextField>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">

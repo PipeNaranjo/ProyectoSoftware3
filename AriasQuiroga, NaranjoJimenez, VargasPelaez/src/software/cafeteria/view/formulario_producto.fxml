@@ -123,7 +123,7 @@
                <effect>
                   <DropShadow color="#544f4f" />
                </effect></ComboBox>
-            <ComboBox fx:id="iva" prefWidth="150.0" promptText="Seleccione un iva" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <ComboBox fx:id="iva" onAction="#verificarIva" prefWidth="150.0" promptText="Seleccione un iva" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <effect>
                   <DropShadow color="#544f4f" />
                </effect></ComboBox>

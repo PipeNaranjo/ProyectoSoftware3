@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+servers/SonarCloud%2FUniversidad+del+Quindio/auth=true
+servers/SonarCloud%2FUniversidad+del+Quindio/notificationsEnabled=true
+servers/SonarCloud%2FUniversidad+del+Quindio/org=Universidad del Quindio
+servers/SonarCloud%2FUniversidad+del+Quindio/url=https\://sonarcloud.io
+servers/SonarCloud%2Funiversidaddelquindio10/auth=true
+servers/SonarCloud%2Funiversidaddelquindio10/notificationsEnabled=true
+servers/SonarCloud%2Funiversidaddelquindio10/org=universidaddelquindio10
+servers/SonarCloud%2Funiversidaddelquindio10/url=https\://sonarcloud.io

@@ -1,0 +1,9 @@
+package software.cafeteria.controladores;
+
+public class AgregarIvaController {
+
+	public AgregarIvaController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

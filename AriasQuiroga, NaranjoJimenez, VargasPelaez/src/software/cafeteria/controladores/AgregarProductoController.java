@@ -1,7 +1,5 @@
 package software.cafeteria.controladores;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -50,10 +48,6 @@ public class AgregarProductoController {
 	@FXML
 	public void initialize() {
 
-		ObservableList<String> l = FXCollections.observableArrayList();
-		String[] lista = { "5", "19", "Exento" };
-		l.addAll(lista);
-		iva.setItems(l);
 		btn_agregar.setGraphic(new ImageView("file:src/software/cafeteria/images/agregarProducto.png"));
 		btn_cancelar.setGraphic(new ImageView("file:src/software/cafeteria/images/cancelar.png"));
 
@@ -63,7 +57,9 @@ public class AgregarProductoController {
 	public void agregarProducto() {
 
 		try {
-			if(!(codigoBarras.getText().equals("") || nombreProducto.getText().equals("") || costoProducto.getText().equals("") || presentacionProducto.getText().equals("") || precioProducto.getText().equals("") || cantidad.getText().equals(""))){
+			if (!(codigoBarras.getText().equals("") || nombreProducto.getText().equals("")
+					|| costoProducto.getText().equals("") || presentacionProducto.getText().equals("")
+					|| precioProducto.getText().equals("") || cantidad.getText().equals(""))) {
 				String codigo_Barras = codigoBarras.getText();
 				String nombre_Producto = nombreProducto.getText();
 				int costo_Producto = Integer.parseInt(costoProducto.getText());
@@ -90,10 +86,11 @@ public class AgregarProductoController {
 					agregar.close();
 				} else {
 					Alert alert = new Alert(AlertType.ERROR,
-							"El producto con el código " + codigo_Barras + " ya se encuentra registrado.", ButtonType.OK);
+							"El producto con el código " + codigo_Barras + " ya se encuentra registrado.",
+							ButtonType.OK);
 					alert.showAndWait();
 				}
-			}else{
+			} else {
 				Alert alert = new Alert(AlertType.ERROR, "Ingrese valores en todos los campos", ButtonType.OK);
 				alert.showAndWait();
 			}
@@ -128,6 +125,18 @@ public class AgregarProductoController {
 	}
 
 	@FXML
+	public void verificarIva() {
+		String iva_ = iva.getSelectionModel().getSelectedItem();
+		if (iva_ != null) {
+			if (iva_.equals("Otro Iva")) {
+				manejador.abrirAgregarIva();
+
+				iva.setItems(manejador.listarIva());
+			}
+		}
+	}
+
+	@FXML
 	public void verificarTipo() {
 
 		String tipo = tipoProducto.getSelectionModel().getSelectedItem();
@@ -150,6 +159,7 @@ public class AgregarProductoController {
 		this.manejador = manejador;
 		tipoProducto.setItems(manejador.listarTipos());
 		empresaDistri.setItems(manejador.listarEmpresas());
+		iva.setItems(manejador.listarIva());
 
 	}
 

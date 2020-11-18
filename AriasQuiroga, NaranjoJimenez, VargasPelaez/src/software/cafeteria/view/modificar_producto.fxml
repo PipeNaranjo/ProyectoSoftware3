@@ -101,15 +101,15 @@
                <effect>
                   <DropShadow color="#544f4f" />
                </effect></TextField>
-            <ComboBox fx:id="tipoProducto" onAction="#verificarTipo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="tipoProducto" onAction="#verificarTipo" prefHeight="25.0" prefWidth="181.0" promptText="Seleccionar un tipo" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <effect>
                   <DropShadow color="#544f4f" />
                </effect></ComboBox>
-            <ComboBox fx:id="empresaDistri" onAction="#verificarEmpresa" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ComboBox fx:id="empresaDistri" onAction="#verificarEmpresa" prefHeight="25.0" prefWidth="177.0" promptText="Seleccionar una empresa" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <effect>
                   <DropShadow color="#544f4f" />
                </effect></ComboBox>
-            <ComboBox fx:id="iva" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <ComboBox fx:id="iva" onAction="#verificarIva" prefHeight="25.0" prefWidth="174.0" promptText="Seleccionar un iva" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <effect>
                   <DropShadow color="#544f4f" />
                </effect></ComboBox>
