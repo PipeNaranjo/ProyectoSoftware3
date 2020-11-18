@@ -820,3 +820,275 @@ java.lang.IllegalStateException: No files nor directories matching 'C:/Users/Pip
 	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.doRun(AbstractAnalyzeProjectJob.java:161)
 	at org.sonarlint.eclipse.core.internal.jobs.AbstractSonarProjectJob.run(AbstractSonarProjectJob.java:45)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2020-11-17 22:09:49.507 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_271
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_CO
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-11-17 22:10:00.710
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-11-17 22:10:00.710
+!MESSAGE A conflict occurred for ALT+SHIFT+G:
+Binding(ALT+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.emf.codegen.ecore.ui.Generate,Generate Code,
+		Generate code for the EMF models in the workspace,
+		Category(org.eclipse.emf.codegen.ecore.ui.Commands,EMF Code Generation,Commands for the EMF code generation tools,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@48dfce5c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+G,
+	ParameterizedCommand(Command(com.googlecode.goclipse.debug.ui.LaunchShortcut.run,Launch Go Application,
+		Launch Go Application,
+		Category(com.googlecode.goclipse.ui.commands.Category,Goclipse Category,Goclipse commands ,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@eccaf1b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-11-17 22:10:07.698
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Pipe Naranjo'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2020-11-17 22:10:11.958
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 2.0.4.v20170307-1435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:93)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY org.sonarlint.eclipse.core 2 0 2020-11-17 22:10:26.222
+!MESSAGE Error when executing SonarLint analysis
+!STACK 0
+java.lang.IllegalStateException: No files nor directories matching 'C:/Users/Pipe Naranjo/Desktop/Carpeta de GitHub/ProyectoSoftware3/AriasQuiroga'
+	at org.sonar.java.AbstractJavaClasspath.getFilesFromProperty(AbstractJavaClasspath.java:92)
+	at org.sonar.java.JavaClasspath.init(JavaClasspath.java:54)
+	at org.sonar.java.AbstractJavaClasspath.getElements(AbstractJavaClasspath.java:280)
+	at org.sonar.java.SonarComponents.getJavaClasspath(SonarComponents.java:149)
+	at org.sonar.java.JavaSquid.<init>(JavaSquid.java:75)
+	at org.sonar.plugins.java.JavaSquidSensor.execute(JavaSquidSensor.java:102)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.executeSensor(SensorsExecutor.java:80)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.execute(SensorsExecutor.java:71)
+	at org.sonarsource.sonarlint.core.container.analysis.AnalysisContainer.doAfterStart(AnalysisContainer.java:132)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.startComponents(ComponentContainer.java:126)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.execute(ComponentContainer.java:111)
+	at org.sonarsource.sonarlint.core.container.standalone.StandaloneGlobalContainer.analyze(StandaloneGlobalContainer.java:153)
+	at org.sonarsource.sonarlint.core.StandaloneSonarLintEngineImpl.analyze(StandaloneSonarLintEngineImpl.java:90)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.lambda$1(StandaloneEngineFacade.java:99)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.withEngine(StandaloneEngineFacade.java:90)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.runAnalysis(StandaloneEngineFacade.java:98)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeStandaloneProjectJob.runAnalysis(AnalyzeStandaloneProjectJob.java:63)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeStandaloneProjectJob.runAnalysis(AnalyzeStandaloneProjectJob.java:1)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.run(AbstractAnalyzeProjectJob.java:389)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.runAnalysisAndUpdateMarkers(AbstractAnalyzeProjectJob.java:199)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.doRun(AbstractAnalyzeProjectJob.java:161)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractSonarProjectJob.run(AbstractSonarProjectJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.sonarlint.eclipse.core 2 0 2020-11-17 22:10:26.381
+!MESSAGE Error when executing SonarLint analysis
+!STACK 0
+java.lang.IllegalStateException: No files nor directories matching 'C:/Users/Pipe Naranjo/Desktop/Carpeta de GitHub/ProyectoSoftware3/AriasQuiroga'
+	at org.sonar.java.AbstractJavaClasspath.getFilesFromProperty(AbstractJavaClasspath.java:92)
+	at org.sonar.java.JavaClasspath.init(JavaClasspath.java:54)
+	at org.sonar.java.AbstractJavaClasspath.getElements(AbstractJavaClasspath.java:280)
+	at org.sonar.java.SonarComponents.getJavaClasspath(SonarComponents.java:149)
+	at org.sonar.java.JavaSquid.<init>(JavaSquid.java:75)
+	at org.sonar.plugins.java.JavaSquidSensor.execute(JavaSquidSensor.java:102)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.executeSensor(SensorsExecutor.java:80)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.execute(SensorsExecutor.java:71)
+	at org.sonarsource.sonarlint.core.container.analysis.AnalysisContainer.doAfterStart(AnalysisContainer.java:132)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.startComponents(ComponentContainer.java:126)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.execute(ComponentContainer.java:111)
+	at org.sonarsource.sonarlint.core.container.standalone.StandaloneGlobalContainer.analyze(StandaloneGlobalContainer.java:153)
+	at org.sonarsource.sonarlint.core.StandaloneSonarLintEngineImpl.analyze(StandaloneSonarLintEngineImpl.java:90)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.lambda$1(StandaloneEngineFacade.java:99)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.withEngine(StandaloneEngineFacade.java:90)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.runAnalysis(StandaloneEngineFacade.java:98)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeStandaloneProjectJob.runAnalysis(AnalyzeStandaloneProjectJob.java:63)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeStandaloneProjectJob.runAnalysis(AnalyzeStandaloneProjectJob.java:1)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.run(AbstractAnalyzeProjectJob.java:389)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.runAnalysisAndUpdateMarkers(AbstractAnalyzeProjectJob.java:199)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.doRun(AbstractAnalyzeProjectJob.java:161)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractSonarProjectJob.run(AbstractSonarProjectJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.sonarlint.eclipse.core 2 0 2020-11-17 22:10:35.053
+!MESSAGE Error when executing SonarLint analysis
+!STACK 0
+java.lang.IllegalStateException: No files nor directories matching 'C:/Users/Pipe Naranjo/Desktop/Carpeta de GitHub/ProyectoSoftware3/AriasQuiroga'
+	at org.sonar.java.AbstractJavaClasspath.getFilesFromProperty(AbstractJavaClasspath.java:92)
+	at org.sonar.java.JavaClasspath.init(JavaClasspath.java:54)
+	at org.sonar.java.AbstractJavaClasspath.getElements(AbstractJavaClasspath.java:280)
+	at org.sonar.java.SonarComponents.getJavaClasspath(SonarComponents.java:149)
+	at org.sonar.java.JavaSquid.<init>(JavaSquid.java:75)
+	at org.sonar.plugins.java.JavaSquidSensor.execute(JavaSquidSensor.java:102)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.executeSensor(SensorsExecutor.java:80)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.execute(SensorsExecutor.java:71)
+	at org.sonarsource.sonarlint.core.container.analysis.AnalysisContainer.doAfterStart(AnalysisContainer.java:132)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.startComponents(ComponentContainer.java:126)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.execute(ComponentContainer.java:111)
+	at org.sonarsource.sonarlint.core.container.standalone.StandaloneGlobalContainer.analyze(StandaloneGlobalContainer.java:153)
+	at org.sonarsource.sonarlint.core.StandaloneSonarLintEngineImpl.analyze(StandaloneSonarLintEngineImpl.java:90)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.lambda$1(StandaloneEngineFacade.java:99)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.withEngine(StandaloneEngineFacade.java:90)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.runAnalysis(StandaloneEngineFacade.java:98)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeStandaloneProjectJob.runAnalysis(AnalyzeStandaloneProjectJob.java:63)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeStandaloneProjectJob.runAnalysis(AnalyzeStandaloneProjectJob.java:1)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.run(AbstractAnalyzeProjectJob.java:389)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.runAnalysisAndUpdateMarkers(AbstractAnalyzeProjectJob.java:199)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.doRun(AbstractAnalyzeProjectJob.java:161)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractSonarProjectJob.run(AbstractSonarProjectJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jface.text 2 0 2020-11-17 22:10:59.498
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2020-11-17 22:10:59.513
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-11-17 22:13:26.897
+!MESSAGE Failed to download org.eclipse.recommenders:index::zip:0.0.0
+!STACK 0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/neon/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:444)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:246)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:223)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:294)
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193)
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172)
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:169)
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/neon/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:39)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:520)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:421)
+	... 8 more
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2020-11-17 22:13:26.906
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from the model repositories. Are you offline?
+
+!ENTRY org.sonarlint.eclipse.core 2 0 2020-11-17 22:22:12.439
+!MESSAGE Error when executing SonarLint analysis
+!STACK 0
+java.lang.IllegalStateException: No files nor directories matching 'C:/Users/Pipe Naranjo/Desktop/Carpeta de GitHub/ProyectoSoftware3/AriasQuiroga'
+	at org.sonar.java.AbstractJavaClasspath.getFilesFromProperty(AbstractJavaClasspath.java:92)
+	at org.sonar.java.JavaClasspath.init(JavaClasspath.java:54)
+	at org.sonar.java.AbstractJavaClasspath.getElements(AbstractJavaClasspath.java:280)
+	at org.sonar.java.SonarComponents.getJavaClasspath(SonarComponents.java:149)
+	at org.sonar.java.JavaSquid.<init>(JavaSquid.java:75)
+	at org.sonar.plugins.java.JavaSquidSensor.execute(JavaSquidSensor.java:102)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.executeSensor(SensorsExecutor.java:80)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.execute(SensorsExecutor.java:71)
+	at org.sonarsource.sonarlint.core.container.analysis.AnalysisContainer.doAfterStart(AnalysisContainer.java:132)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.startComponents(ComponentContainer.java:126)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.execute(ComponentContainer.java:111)
+	at org.sonarsource.sonarlint.core.container.storage.StorageAnalyzer.analyze(StorageAnalyzer.java:75)
+	at org.sonarsource.sonarlint.core.container.storage.StorageContainerHandler.analyze(StorageContainerHandler.java:85)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.lambda$analyze$0(ConnectedSonarLintEngineImpl.java:152)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.withReadLock(ConnectedSonarLintEngineImpl.java:349)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.withReadLock(ConnectedSonarLintEngineImpl.java:339)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.analyze(ConnectedSonarLintEngineImpl.java:149)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.lambda$13(ConnectedEngineFacade.java:354)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.withEngine(ConnectedEngineFacade.java:147)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.runAnalysis(ConnectedEngineFacade.java:353)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeConnectedProjectJob.runAnalysis(AnalyzeConnectedProjectJob.java:70)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeConnectedProjectJob.runAnalysis(AnalyzeConnectedProjectJob.java:1)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.run(AbstractAnalyzeProjectJob.java:389)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.runAnalysisAndUpdateMarkers(AbstractAnalyzeProjectJob.java:199)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.doRun(AbstractAnalyzeProjectJob.java:161)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractSonarProjectJob.run(AbstractSonarProjectJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.sonarlint.eclipse.core 2 0 2020-11-17 22:25:01.570
+!MESSAGE Error when executing SonarLint analysis
+!STACK 0
+java.lang.IllegalStateException: No files nor directories matching 'C:/Users/Pipe Naranjo/Desktop/Carpeta de GitHub/ProyectoSoftware3/AriasQuiroga'
+	at org.sonar.java.AbstractJavaClasspath.getFilesFromProperty(AbstractJavaClasspath.java:92)
+	at org.sonar.java.JavaClasspath.init(JavaClasspath.java:54)
+	at org.sonar.java.AbstractJavaClasspath.getElements(AbstractJavaClasspath.java:280)
+	at org.sonar.java.SonarComponents.getJavaClasspath(SonarComponents.java:149)
+	at org.sonar.java.JavaSquid.<init>(JavaSquid.java:75)
+	at org.sonar.plugins.java.JavaSquidSensor.execute(JavaSquidSensor.java:102)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.executeSensor(SensorsExecutor.java:80)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.execute(SensorsExecutor.java:71)
+	at org.sonarsource.sonarlint.core.container.analysis.AnalysisContainer.doAfterStart(AnalysisContainer.java:132)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.startComponents(ComponentContainer.java:126)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.execute(ComponentContainer.java:111)
+	at org.sonarsource.sonarlint.core.container.storage.StorageAnalyzer.analyze(StorageAnalyzer.java:75)
+	at org.sonarsource.sonarlint.core.container.storage.StorageContainerHandler.analyze(StorageContainerHandler.java:85)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.lambda$analyze$0(ConnectedSonarLintEngineImpl.java:152)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.withReadLock(ConnectedSonarLintEngineImpl.java:349)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.withReadLock(ConnectedSonarLintEngineImpl.java:339)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.analyze(ConnectedSonarLintEngineImpl.java:149)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.lambda$13(ConnectedEngineFacade.java:354)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.withEngine(ConnectedEngineFacade.java:147)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.runAnalysis(ConnectedEngineFacade.java:353)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeConnectedProjectJob.runAnalysis(AnalyzeConnectedProjectJob.java:70)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeConnectedProjectJob.runAnalysis(AnalyzeConnectedProjectJob.java:1)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.run(AbstractAnalyzeProjectJob.java:389)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.runAnalysisAndUpdateMarkers(AbstractAnalyzeProjectJob.java:199)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.doRun(AbstractAnalyzeProjectJob.java:161)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractSonarProjectJob.run(AbstractSonarProjectJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.sonarlint.eclipse.core 2 0 2020-11-17 22:25:56.414
+!MESSAGE Error when executing SonarLint analysis
+!STACK 0
+java.lang.IllegalStateException: No files nor directories matching 'C:/Users/Pipe Naranjo/Desktop/Carpeta de GitHub/ProyectoSoftware3/AriasQuiroga'
+	at org.sonar.java.AbstractJavaClasspath.getFilesFromProperty(AbstractJavaClasspath.java:92)
+	at org.sonar.java.JavaClasspath.init(JavaClasspath.java:54)
+	at org.sonar.java.AbstractJavaClasspath.getElements(AbstractJavaClasspath.java:280)
+	at org.sonar.java.SonarComponents.getJavaClasspath(SonarComponents.java:149)
+	at org.sonar.java.JavaSquid.<init>(JavaSquid.java:75)
+	at org.sonar.plugins.java.JavaSquidSensor.execute(JavaSquidSensor.java:102)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.executeSensor(SensorsExecutor.java:80)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.execute(SensorsExecutor.java:71)
+	at org.sonarsource.sonarlint.core.container.analysis.AnalysisContainer.doAfterStart(AnalysisContainer.java:132)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.startComponents(ComponentContainer.java:126)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.execute(ComponentContainer.java:111)
+	at org.sonarsource.sonarlint.core.container.storage.StorageAnalyzer.analyze(StorageAnalyzer.java:75)
+	at org.sonarsource.sonarlint.core.container.storage.StorageContainerHandler.analyze(StorageContainerHandler.java:85)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.lambda$analyze$0(ConnectedSonarLintEngineImpl.java:152)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.withReadLock(ConnectedSonarLintEngineImpl.java:349)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.withReadLock(ConnectedSonarLintEngineImpl.java:339)
+	at org.sonarsource.sonarlint.core.ConnectedSonarLintEngineImpl.analyze(ConnectedSonarLintEngineImpl.java:149)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.lambda$13(ConnectedEngineFacade.java:354)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.withEngine(ConnectedEngineFacade.java:147)
+	at org.sonarlint.eclipse.core.internal.engine.connected.ConnectedEngineFacade.runAnalysis(ConnectedEngineFacade.java:353)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeConnectedProjectJob.runAnalysis(AnalyzeConnectedProjectJob.java:70)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeConnectedProjectJob.runAnalysis(AnalyzeConnectedProjectJob.java:1)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.run(AbstractAnalyzeProjectJob.java:389)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.runAnalysisAndUpdateMarkers(AbstractAnalyzeProjectJob.java:199)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.doRun(AbstractAnalyzeProjectJob.java:161)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractSonarProjectJob.run(AbstractSonarProjectJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2020-11-17 22:26:05.531
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2020-11-17 22:26:05.550
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
