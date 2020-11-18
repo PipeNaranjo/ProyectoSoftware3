@@ -776,3 +776,47 @@ java.io.IOException: http://www.objectaid.com/ is not a valid repository locatio
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:152)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:130)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-11-17 22:05:13.849
+!MESSAGE Background Indexer Crash Recovery
+!STACK 0
+java.lang.NegativeArraySizeException
+	at org.eclipse.jdt.internal.compiler.util.HashtableOfObject.<init>(HashtableOfObject.java:38)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readCategoryTable(DiskIndex.java:663)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeCategory(DiskIndex.java:466)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeCategories(DiskIndex.java:458)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:560)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:197)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:905)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:947)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:644)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:377)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.sonarlint.eclipse.core 2 0 2020-11-17 22:05:14.534
+!MESSAGE Error when executing SonarLint analysis
+!STACK 0
+java.lang.IllegalStateException: No files nor directories matching 'C:/Users/Pipe Naranjo/Desktop/Carpeta de GitHub/ProyectoSoftware3/AriasQuiroga'
+	at org.sonar.java.AbstractJavaClasspath.getFilesFromProperty(AbstractJavaClasspath.java:92)
+	at org.sonar.java.JavaClasspath.init(JavaClasspath.java:54)
+	at org.sonar.java.AbstractJavaClasspath.getElements(AbstractJavaClasspath.java:280)
+	at org.sonar.java.SonarComponents.getJavaClasspath(SonarComponents.java:149)
+	at org.sonar.java.JavaSquid.<init>(JavaSquid.java:75)
+	at org.sonar.plugins.java.JavaSquidSensor.execute(JavaSquidSensor.java:102)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.executeSensor(SensorsExecutor.java:80)
+	at org.sonarsource.sonarlint.core.analyzer.sensor.SensorsExecutor.execute(SensorsExecutor.java:71)
+	at org.sonarsource.sonarlint.core.container.analysis.AnalysisContainer.doAfterStart(AnalysisContainer.java:132)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.startComponents(ComponentContainer.java:126)
+	at org.sonarsource.sonarlint.core.container.ComponentContainer.execute(ComponentContainer.java:111)
+	at org.sonarsource.sonarlint.core.container.standalone.StandaloneGlobalContainer.analyze(StandaloneGlobalContainer.java:153)
+	at org.sonarsource.sonarlint.core.StandaloneSonarLintEngineImpl.analyze(StandaloneSonarLintEngineImpl.java:90)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.lambda$1(StandaloneEngineFacade.java:99)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.withEngine(StandaloneEngineFacade.java:90)
+	at org.sonarlint.eclipse.core.internal.engine.StandaloneEngineFacade.runAnalysis(StandaloneEngineFacade.java:98)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeStandaloneProjectJob.runAnalysis(AnalyzeStandaloneProjectJob.java:63)
+	at org.sonarlint.eclipse.core.internal.jobs.AnalyzeStandaloneProjectJob.runAnalysis(AnalyzeStandaloneProjectJob.java:1)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.run(AbstractAnalyzeProjectJob.java:389)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.runAnalysisAndUpdateMarkers(AbstractAnalyzeProjectJob.java:199)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractAnalyzeProjectJob.doRun(AbstractAnalyzeProjectJob.java:161)
+	at org.sonarlint.eclipse.core.internal.jobs.AbstractSonarProjectJob.run(AbstractSonarProjectJob.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

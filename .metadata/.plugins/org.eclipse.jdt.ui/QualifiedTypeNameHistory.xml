@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.swing.text.InternationalFormatter"/>
-<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
 <fullyQualifiedTypeName name="java.awt.font.NumericShaper"/>
@@ -18,14 +17,15 @@
 <fullyQualifiedTypeName name="software.cafeteria.logica.Inventario"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="software.cafeteria.entidades.Empresa"/>
-<fullyQualifiedTypeName name="org.junit.Assert"/>
-<fullyQualifiedTypeName name="software.cafeteria.entidades.ProductosInventario"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="software.cafeteria.entidades.Recibo"/>
-<fullyQualifiedTypeName name="software.cafeteria.entidades.RegistroDeVentas"/>
 <fullyQualifiedTypeName name="software.cafeteria.entidades.InformeFiscal"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="software.cafeteria.entidades.ProductosVentas"/>
 <fullyQualifiedTypeName name="software.cafeteria.entidades.Producto"/>
+<fullyQualifiedTypeName name="software.cafeteria.entidades.Recibo"/>
+<fullyQualifiedTypeName name="software.cafeteria.entidades.ProductosVentas"/>
+<fullyQualifiedTypeName name="software.cafeteria.entidades.ProductosInventario"/>
+<fullyQualifiedTypeName name="software.cafeteria.entidades.RegistroDeVentas"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 </qualifiedTypeNameHistroy>

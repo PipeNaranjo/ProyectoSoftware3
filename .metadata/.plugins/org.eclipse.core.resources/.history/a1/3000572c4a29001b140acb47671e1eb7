@@ -392,7 +392,5 @@ public class PruebasUnitarias {
 
 		Assert.assertNotNull(nuevoRecibo);
 	}
-	
-	
 
 }

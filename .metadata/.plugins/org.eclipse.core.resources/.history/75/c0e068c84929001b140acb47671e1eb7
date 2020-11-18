@@ -375,24 +375,4 @@ public class PruebasUnitarias {
 		Assert.assertTrue(lista.size() == 1);
 	}
 
-	@Test
-	public void obtenerReciboTest() {
-		Recibo recibo = new Recibo(false);
-		int cantidad = 3;
-		ProductosInventario producto = new ProductosInventario("7702004002419", "AGUILA ZERO BOTELLA RETORNABLE",
-				new Empresa("Bavaria"), 30, 19, 48800, 20, "Licor", 2500);
-		inventario.agregarProducto(producto);
-
-		recibo.agregarProductos(producto, cantidad);
-
-		RegistroDeVentas registro = new RegistroDeVentas(0, 0);
-		registro.adjuntarUnRecibo(recibo, inventario);
-
-		Recibo nuevoRecibo = registro.obtenerRecibo(new GregorianCalendar(), "0");
-
-		Assert.assertNotNull(nuevoRecibo);
-	}
-	
-	
-
 }

@@ -14,7 +14,6 @@ INDEX VERSION 1.130+C:\Users\Pipe Naranjo\Desktop\Carpeta de GitHub\ProyectoSoft
 3520560685.index
 3529367727.index
 1769093953.index
-2494513434.index
 1080749882.index
 2601782648.index
 733439246.index
@@ -23,9 +22,9 @@ INDEX VERSION 1.130+C:\Users\Pipe Naranjo\Desktop\Carpeta de GitHub\ProyectoSoft
 4097085155.index
 2027517248.index
 1000893301.index
-2394231702.index
 4178871191.index
 3069466782.index
 4254095041.index
 254442204.index
 4155066694.index
+2394231702.index
